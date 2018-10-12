@@ -83,12 +83,12 @@ public class Blu extends javax.swing.JFrame {
         jMenuItemBotão_Sair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Note");
+        setTitle("Blu");
         setAlwaysOnTop(true);
         setAutoRequestFocus(false);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFocusCycleRoot(false);
-        setName("Note"); // NOI18N
+        setName("Blu"); // NOI18N
 
         jPanelListagem.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -389,8 +389,7 @@ public class Blu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getAccessibleContext().setAccessibleName("F5ENHA");
-        getAccessibleContext().setAccessibleDescription("Gerenciador de senhas");
+        getAccessibleContext().setAccessibleDescription("Gerenciador");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

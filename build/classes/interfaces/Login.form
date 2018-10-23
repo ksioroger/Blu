@@ -194,7 +194,7 @@
                   <Font name="Tahoma" size="12" style="1"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="78"/>
-                <Property name="text" type="java.lang.String" value="New Us&#xfa;ario"/>
+                <Property name="text" type="java.lang.String" value="Novo Us&#xfa;ario"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonNovoUserActionPerformed"/>

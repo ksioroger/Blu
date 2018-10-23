@@ -124,7 +124,7 @@ public class Login extends javax.swing.JFrame {
 
         jButtonNovoUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButtonNovoUser.setMnemonic('N');
-        jButtonNovoUser.setText("Novo Usúario");
+        jButtonNovoUser.setText("New Usúario");
         jButtonNovoUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonNovoUserActionPerformed(evt);

@@ -240,7 +240,7 @@ public class Login extends javax.swing.JFrame {
                 //Dados informados pelo usuário solicitando o login
                 userInformado = dados.getusuário();
                 //Senha é encrtiptada para testar a compatil]bilidade com a armazenada no banco
-                keyInformada = entidade.EncriptaSenha_MD5.encripta(dados.getsenha());
+                keyInformada = entidade.EncriptaSenha_SHA256.encripta(dados.getsenha());
 
                 //Dados armazenados no banco
                 userBanco = dadosBuscaBD.getusuário();

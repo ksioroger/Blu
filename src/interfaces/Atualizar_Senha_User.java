@@ -256,7 +256,7 @@ public class Atualizar_Senha_User extends javax.swing.JDialog {
         SenhaInformada = String.valueOf(PassWord);
          //Criptografa a senha escolhida em MD5
         
-        SenhaInformada = entidade.EncriptaSenha_MD5.encripta(SenhaInformada);
+        SenhaInformada = entidade.EncriptaSenha_SHA256.encripta(SenhaInformada);
         if (SenhaInformada.equals(SenhaCifrada)) {
             //Captura a senha digitada
             PassWord =  jPasswordFieldSenha_Nova.getPassword();
@@ -271,7 +271,7 @@ public class Atualizar_Senha_User extends javax.swing.JDialog {
             //Caso as senhas inforemadas confiram, realiza a atualização
             if (SenhaNova.equals(SenhaNovaReentrada)) {
                 //Realiza a atualização de senha
-                SenhaCifrada = entidade.EncriptaSenha_MD5.encripta(SenhaNova);
+                SenhaCifrada = entidade.EncriptaSenha_SHA256.encripta(SenhaNova);
                 user.setsenha(SenhaCifrada);
                 mensagem = alterarSenha(user);
                 if (mensagem == null) {

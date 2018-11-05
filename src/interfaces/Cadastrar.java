@@ -336,7 +336,7 @@ public class Cadastrar extends javax.swing.JDialog {
     
     public Usuário prepararDadosparaArmazenar(Usuário dados){
         //Criptografa a senha escolhida em MD5
-        dados.setsenha(entidade.EncriptaSenha_MD5.encripta(dados.getsenha()));
+        dados.setsenha(entidade.EncriptaSenha_SHA256.encripta(dados.getsenha()));
         
         dados.setChave(geraChaveEncriptação(dados));
         return dados;

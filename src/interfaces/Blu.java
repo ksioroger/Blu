@@ -27,7 +27,7 @@ import javax.swing.JOptionPane;
  */
 
 //Janela principal do programa de gestão de senhas
-public class Blu extends javax.swing.JFrame {
+public class Blu1 extends javax.swing.JFrame {
 
     /**
     * Gestor de senhas desenvolvido por Cassiano Rogério.
@@ -35,7 +35,7 @@ public class Blu extends javax.swing.JFrame {
     public Vector<Visão<String>> senhas_cadastradas;
     String userLogado = null;
     
-    public Blu(String nomeUser) {
+    public Blu1(String nomeUser) {
         userLogado = nomeUser;
         senhas_cadastradas = Senha.getVisões(Usuário.buscar_Usuário_Todos_os_dados(userLogado).getID());
         URL url = this.getClass().getResource("/images/key 20x20.png");
@@ -66,7 +66,12 @@ public class Blu extends javax.swing.JFrame {
         jButtonAtualizar = new javax.swing.JButton();
         jButtonExcluir = new javax.swing.JButton();
         jButtonSair = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBarMenus = new javax.swing.JMenuBar();
+        jMenuMenuUsuário = new javax.swing.JMenu();
+        jMenuItemGerenciar = new javax.swing.JMenuItem();
+        jMenuItemTrocar_Usuário = new javax.swing.JMenuItem();
+        jMenuItemBotão_Sair = new javax.swing.JMenuItem();
         jMenuEditar = new javax.swing.JMenu();
         jMenuItemNovo = new javax.swing.JMenuItem();
         jMenuItemVisualizar = new javax.swing.JMenuItem();
@@ -76,24 +81,26 @@ public class Blu extends javax.swing.JFrame {
         jMenuSobre = new javax.swing.JMenu();
         jMenuItemAtalhos = new javax.swing.JMenuItem();
         jMenuItemSobre = new javax.swing.JMenuItem();
-        jMenuEspaçamento = new javax.swing.JMenu();
-        jMenuMenuUsuário = new javax.swing.JMenu();
-        jMenuItemGerenciar = new javax.swing.JMenuItem();
-        jMenuItemTrocar_Usuário = new javax.swing.JMenuItem();
-        jMenuItemBotão_Sair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Blu");
+        setTitle("Blu1");
         setAlwaysOnTop(true);
-        setAutoRequestFocus(false);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setFocusCycleRoot(false);
-        setName("Blu"); // NOI18N
+        setExtendedState(getExtendedState());
+        setLocation(new java.awt.Point(0, 0));
+        setMaximizedBounds(getMaximizedBounds());
+        setMinimumSize(getMinimumSize());
+        setName("Blu1"); // NOI18N
+        setShape(getShape());
+        setSize(getMaximumSize());
 
         jPanelListagem.setBackground(new java.awt.Color(204, 204, 204));
+        jPanelListagem.setMaximumSize(getMaximumSize());
+        jPanelListagem.setLayout(new javax.swing.OverlayLayout(jPanelListagem));
 
         jScrollPaneListadeSenhas.setOpaque(false);
         jScrollPaneListadeSenhas.getViewport().setOpaque(false);
+        jScrollPaneListadeSenhas.setMaximumSize(getMaximumSize());
 
         jListSenhasCadastradas.setOpaque(false);
         jListSenhasCadastradas.setBackground(new Color(0, 0, 0, 0));
@@ -106,30 +113,22 @@ public class Blu extends javax.swing.JFrame {
         jListSenhasCadastradas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPaneListadeSenhas.setViewportView(jListSenhasCadastradas);
 
-        jLabelFundoListagem.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanelListagem.add(jScrollPaneListadeSenhas);
+
+        jLabelFundoListagem.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelFundoListagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Key backgroung 250x250.png"))); // NOI18N
         jLabelFundoListagem.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelFundoListagem.setFocusable(false);
         jLabelFundoListagem.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabelFundoListagem.setInheritsPopupMenu(false);
+        jLabelFundoListagem.setMaximumSize(getMaximumSize());
+        jLabelFundoListagem.setMinimumSize(getMinimumSize());
+        jLabelFundoListagem.setPreferredSize(getPreferredSize());
         jLabelFundoListagem.setRequestFocusEnabled(false);
         jLabelFundoListagem.setVerifyInputWhenFocusTarget(false);
+        jPanelListagem.add(jLabelFundoListagem);
 
-        javax.swing.GroupLayout jPanelListagemLayout = new javax.swing.GroupLayout(jPanelListagem);
-        jPanelListagem.setLayout(jPanelListagemLayout);
-        jPanelListagemLayout.setHorizontalGroup(
-            jPanelListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelListagemLayout.createSequentialGroup()
-                .addComponent(jScrollPaneListadeSenhas, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelListagemLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelFundoListagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanelListagemLayout.setVerticalGroup(
-            jPanelListagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabelFundoListagem)
-            .addComponent(jScrollPaneListadeSenhas, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        getContentPane().add(jPanelListagem, java.awt.BorderLayout.CENTER);
 
         jButtonBuscar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/find 40x40.png"))); // NOI18N
@@ -192,11 +191,16 @@ public class Blu extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Blu - Sistema de gerenciamento de estoque e vendas");
+
         javax.swing.GroupLayout jPanelBotõesLayout = new javax.swing.GroupLayout(jPanelBotões);
         jPanelBotões.setLayout(jPanelBotõesLayout);
         jPanelBotõesLayout.setHorizontalGroup(
             jPanelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelBotõesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonBuscar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonNovo)
@@ -207,26 +211,71 @@ public class Blu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonExcluir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonSair))
+                .addComponent(jButtonSair)
+                .addContainerGap())
         );
         jPanelBotõesLayout.setVerticalGroup(
             jPanelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelBotõesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonBuscar)
-                    .addComponent(jButtonNovo)
-                    .addComponent(jButtonVisualizar)
-                    .addComponent(jButtonAtualizar)
-                    .addComponent(jButtonExcluir)
-                    .addComponent(jButtonSair))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelBotõesLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanelBotõesLayout.createSequentialGroup()
+                        .addGroup(jPanelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonBuscar)
+                            .addComponent(jButtonNovo)
+                            .addComponent(jButtonVisualizar)
+                            .addComponent(jButtonAtualizar)
+                            .addComponent(jButtonExcluir)
+                            .addComponent(jButtonSair))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
+
+        getContentPane().add(jPanelBotões, java.awt.BorderLayout.SOUTH);
 
         jMenuBarMenus.setBorder(null);
         jMenuBarMenus.setFocusCycleRoot(true);
         jMenuBarMenus.setName(""); // NOI18N
         jMenuBarMenus.setPreferredSize(new java.awt.Dimension(50, 22));
+
+        jMenuMenuUsuário.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jMenuMenuUsuário.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user 20x20.png"))); // NOI18N
+        jMenuMenuUsuário.setMnemonic('u');
+        jMenuMenuUsuário.setText(userLogado);
+        jMenuMenuUsuário.setFocusable(false);
+        jMenuMenuUsuário.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+
+        jMenuItemGerenciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user 20x20.png"))); // NOI18N
+        jMenuItemGerenciar.setText("Gerenciar");
+        jMenuItemGerenciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemGerenciarActionPerformed(evt);
+            }
+        });
+        jMenuMenuUsuário.add(jMenuItemGerenciar);
+
+        jMenuItemTrocar_Usuário.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/users 20x20.png"))); // NOI18N
+        jMenuItemTrocar_Usuário.setText("Trocar Usuário");
+        jMenuItemTrocar_Usuário.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemTrocar_UsuárioActionPerformed(evt);
+            }
+        });
+        jMenuMenuUsuário.add(jMenuItemTrocar_Usuário);
+
+        jMenuItemBotão_Sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit 20x20.png"))); // NOI18N
+        jMenuItemBotão_Sair.setText("Sair");
+        jMenuItemBotão_Sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemBotão_SairActionPerformed(evt);
+            }
+        });
+        jMenuMenuUsuário.add(jMenuItemBotão_Sair);
+
+        jMenuBarMenus.add(jMenuMenuUsuário);
 
         jMenuEditar.setBorder(null);
         jMenuEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit 20x20.png"))); // NOI18N
@@ -320,74 +369,7 @@ public class Blu extends javax.swing.JFrame {
 
         jMenuBarMenus.add(jMenuSobre);
 
-        jMenuEspaçamento.setText("                                                                                                                         ");
-        jMenuEspaçamento.setContentAreaFilled(false);
-        jMenuEspaçamento.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jMenuEspaçamento.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        jMenuEspaçamento.setEnabled(false);
-        jMenuEspaçamento.setFocusable(false);
-        jMenuEspaçamento.setRequestFocusEnabled(false);
-        jMenuEspaçamento.setRolloverEnabled(false);
-        jMenuEspaçamento.setVerifyInputWhenFocusTarget(false);
-        jMenuBarMenus.add(jMenuEspaçamento);
-
-        jMenuMenuUsuário.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenuMenuUsuário.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user 20x20.png"))); // NOI18N
-        jMenuMenuUsuário.setMnemonic('u');
-        jMenuMenuUsuário.setText(userLogado);
-        jMenuMenuUsuário.setFocusable(false);
-        jMenuMenuUsuário.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-
-        jMenuItemGerenciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user 20x20.png"))); // NOI18N
-        jMenuItemGerenciar.setText("Gerenciar");
-        jMenuItemGerenciar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemGerenciarActionPerformed(evt);
-            }
-        });
-        jMenuMenuUsuário.add(jMenuItemGerenciar);
-
-        jMenuItemTrocar_Usuário.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/users 20x20.png"))); // NOI18N
-        jMenuItemTrocar_Usuário.setText("Trocar Usuário");
-        jMenuItemTrocar_Usuário.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemTrocar_UsuárioActionPerformed(evt);
-            }
-        });
-        jMenuMenuUsuário.add(jMenuItemTrocar_Usuário);
-
-        jMenuItemBotão_Sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit 20x20.png"))); // NOI18N
-        jMenuItemBotão_Sair.setText("Sair");
-        jMenuItemBotão_Sair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemBotão_SairActionPerformed(evt);
-            }
-        });
-        jMenuMenuUsuário.add(jMenuItemBotão_Sair);
-
-        jMenuBarMenus.add(jMenuMenuUsuário);
-
         setJMenuBar(jMenuBarMenus);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelListagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanelBotões, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanelListagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanelBotões, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
 
         getAccessibleContext().setAccessibleDescription("Gerenciador");
 
@@ -516,36 +498,6 @@ public class Blu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItemAtalhosKeyPressed
     
-    private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
-        // TODO add your handling code here:
-        //Solicita a criação da janela de criação de novo cadastro de senha
-        novo();
-    }//GEN-LAST:event_jButtonNovoActionPerformed
-
-    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
-        // TODO add your handling code here:
-        //Encerra o programa
-        System.exit(0);
-    }//GEN-LAST:event_jButtonSairActionPerformed
-
-    private void jButtonVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVisualizarActionPerformed
-        // TODO add your handling code here:
-        //Solicita a criação da janela de visualização do cadastro selecionado
-        visualizar();
-    }//GEN-LAST:event_jButtonVisualizarActionPerformed
-
-    private void jButtonAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtualizarActionPerformed
-        // TODO add your handling code here:
-        //Solicita a criação da janela de atualização do cadastro selecionado
-        atualizar();
-    }//GEN-LAST:event_jButtonAtualizarActionPerformed
-
-    private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
-        // TODO add your handling code here:
-        //Solicita a criação da janela de exclusão do cadastro selecionado
-        excluir();
-    }//GEN-LAST:event_jButtonExcluirActionPerformed
-
     private void jMenuItemAtalhosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAtalhosActionPerformed
         // TODO add your handling code here:
         //Chama a janela que lista os atalhos do programa
@@ -557,15 +509,6 @@ public class Blu extends javax.swing.JFrame {
         //Cria a janela sobre do programa
         new controladorSobre ();
     }//GEN-LAST:event_jMenuItemSobreActionPerformed
-
-    //Botão para atualizar a interface do programa
-    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
-        // TODO add your handling code here:
-        //Refaz a lista de cadastro na tela principal
-        RefazerJList();
-        buscar();
-        RefazerJList();
-    }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
         // TODO add your handling code here:
@@ -617,6 +560,44 @@ public class Blu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItemGerenciarActionPerformed
 
+    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
+        // TODO add your handling code here:
+        //Refaz a lista de cadastro na tela principal
+        RefazerJList();
+        buscar();
+        RefazerJList();
+    }//GEN-LAST:event_jButtonBuscarActionPerformed
+
+    private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
+        // TODO add your handling code here:
+        //Solicita a criação da janela de criação de novo cadastro de senha
+        novo();
+    }//GEN-LAST:event_jButtonNovoActionPerformed
+
+    private void jButtonVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVisualizarActionPerformed
+        // TODO add your handling code here:
+        //Solicita a criação da janela de visualização do cadastro selecionado
+        visualizar();
+    }//GEN-LAST:event_jButtonVisualizarActionPerformed
+
+    private void jButtonAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtualizarActionPerformed
+        // TODO add your handling code here:
+        //Solicita a criação da janela de atualização do cadastro selecionado
+        atualizar();
+    }//GEN-LAST:event_jButtonAtualizarActionPerformed
+
+    private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
+        // TODO add your handling code here:
+        //Solicita a criação da janela de exclusão do cadastro selecionado
+        excluir();
+    }//GEN-LAST:event_jButtonExcluirActionPerformed
+
+    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
+        // TODO add your handling code here:
+        //Encerra o programa
+        System.exit(0);
+    }//GEN-LAST:event_jButtonSairActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -634,33 +615,25 @@ public class Blu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Blu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Blu1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Blu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Blu1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Blu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Blu1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Blu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Blu1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
                 String nomeUser = null;
-                Blu JanelaNote =  new Blu(nomeUser);
-                JanelaNote.setLayout(new BorderLayout());
-                JanelaNote.setLocationRelativeTo(null);
-                JanelaNote.setResizable(false);
-                JanelaNote.setVisible(true);
+                Blu1 JanelaNote =  new Blu1(nomeUser);
+                //JanelaNote.setLayout(new BorderLayout());
+                //JanelaNote.setLocationRelativeTo(null);
+                //JanelaNote.setResizable(false);
+                //JanelaNote.setVisible(true);
             }
         });
     }
@@ -672,11 +645,11 @@ public class Blu extends javax.swing.JFrame {
     javax.swing.JButton jButtonNovo;
     javax.swing.JButton jButtonSair;
     javax.swing.JButton jButtonVisualizar;
+    javax.swing.JLabel jLabel1;
     javax.swing.JLabel jLabelFundoListagem;
     public javax.swing.JList jListSenhasCadastradas;
     javax.swing.JMenuBar jMenuBarMenus;
     javax.swing.JMenu jMenuEditar;
-    javax.swing.JMenu jMenuEspaçamento;
     javax.swing.JMenuItem jMenuItemAtalhos;
     javax.swing.JMenuItem jMenuItemAtualizar;
     javax.swing.JMenuItem jMenuItemBotão_Sair;

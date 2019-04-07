@@ -328,7 +328,7 @@ public class Login extends javax.swing.JFrame {
     
     //Cria a tela de login
     private void F5enha(String nomeUser){
-        Blu1 JanelaNote =  new Blu1(nomeUser);
+        Blu JanelaNote =  new Blu(nomeUser);
         //JanelaNote.setLayout(new BorderLayout());
         //JanelaNote.setLocationRelativeTo(null);
         //JanelaNote.setResizable(false);

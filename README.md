@@ -1,7 +1,7 @@
-# Blu - Gerenciador #
+# Blu - Gerenciador de estoque #
 
 ## Descrição ## 
-Gerenciador de senhas em JAVA com armazenamento em Banco Mysql e criptografia MD5(assimétrica) e AES(simétrica).
+Gerenciador em JAVA com armazenamento em Banco Mysql e criptografia MD5(assimétrica) e AES(simétrica).
 
 No menu **_Sobre_** é possível acessar os atalhos do programa e informações sobre o sistema.
 

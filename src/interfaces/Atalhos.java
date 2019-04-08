@@ -17,6 +17,7 @@ import javax.swing.KeyStroke;
  */
 
 //Janelas responsável por listar os atalhos do programa
+@SuppressWarnings("serial")
 public class Atalhos extends javax.swing.JFrame {
 
     /**

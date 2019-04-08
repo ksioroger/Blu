@@ -9,6 +9,7 @@ import javax.swing.text.PlainDocument;
  */
 
 //Permite controlar o tamanho do campo que o um TextField pode receber
+@SuppressWarnings("serial")
 public class ControleTamanhoTexto extends PlainDocument{
     private int tamanhoMax = 10;
          

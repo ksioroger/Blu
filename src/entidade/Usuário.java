@@ -24,6 +24,7 @@ import javax.crypto.spec.SecretKeySpec;
  *
  * @author Cassiano Rogério
  */
+@SuppressWarnings("unused")
 public class Usuário {
     private int id;
     private String chave;

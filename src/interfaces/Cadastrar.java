@@ -16,6 +16,9 @@ import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 import javax.swing.KeyStroke;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 /**
  *
@@ -23,12 +26,12 @@ import javax.swing.KeyStroke;
  */
 
 @SuppressWarnings({ "serial", "unused" })
-public class Cadastrar_Novo_User extends javax.swing.JDialog {
+public class Cadastrar extends javax.swing.JDialog {
 /**
      * Creates new form Cadastro
      * @param parent
      * @param modal */
-    public Cadastrar_Novo_User(java.awt.Frame parent, boolean modal) {
+    public Cadastrar(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         URL url = this.getClass().getResource("/images/key 20x20.png");
         Image iconeTitulo = Toolkit.getDefaultToolkit().getImage(url);
@@ -36,6 +39,14 @@ public class Cadastrar_Novo_User extends javax.swing.JDialog {
         initComponents();
         //Setar o botão Okay como botão padrão da janela
         getRootPane().setDefaultButton(jButtonCadastrar);
+        panel_Cadastro.setLayout(null);
+        panel_Cadastro.add(panel_Rótulos);
+        panel_Rótulos.setLayout(null);
+        panel_Rótulos.add(jLabelKey);
+        panel_Rótulos.add(jLabelKey_Reentrada);
+        panel_Rótulos.add(jLabelUser);
+        panel_Cadastro.add(panel_Botões);
+        panel_Cadastro.add(panel_Entrada_Valores);
     }
 
     /**
@@ -47,16 +58,22 @@ public class Cadastrar_Novo_User extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelCadastroUser = new javax.swing.JPanel();
-        jPanelUsers = new javax.swing.JPanel();
+        panel_Cadastro = new javax.swing.JPanel();
+        panel_Rótulos = new javax.swing.JPanel();
+        panel_Rótulos.setBounds(0, 0, 119, 100);
         jLabelUser = new javax.swing.JLabel();
+        jLabelUser.setBounds(61, 11, 52, 28);
         jLabelKey = new javax.swing.JLabel();
+        jLabelKey.setBounds(70, 45, 43, 21);
         jLabelKey_Reentrada = new javax.swing.JLabel();
-        jPanelKey = new javax.swing.JPanel();
+        jLabelKey_Reentrada.setBounds(10, 72, 103, 30);
+        panel_Entrada_Valores = new javax.swing.JPanel();
+        panel_Entrada_Valores.setBounds(119, 0, 258, 100);
         jFormattedTextFieldUser = new javax.swing.JFormattedTextField();
         jPasswordFieldKey = new javax.swing.JPasswordField();
         jPasswordFieldKey_Reentrada = new javax.swing.JPasswordField();
-        jPanelBotões = new javax.swing.JPanel();
+        panel_Botões = new javax.swing.JPanel();
+        panel_Botões.setBounds(0, 106, 377, 25);
         jButtonCancelar = new javax.swing.JButton();
         jButtonCadastrar = new javax.swing.JButton();
 
@@ -73,31 +90,6 @@ public class Cadastrar_Novo_User extends javax.swing.JDialog {
         jLabelKey_Reentrada.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelKey_Reentrada.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelKey_Reentrada.setText("Repita a Senha");
-
-        javax.swing.GroupLayout jPanelUsersLayout = new javax.swing.GroupLayout(jPanelUsers);
-        jPanelUsers.setLayout(jPanelUsersLayout);
-        jPanelUsersLayout.setHorizontalGroup(
-            jPanelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelUsersLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(jPanelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanelUsersLayout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabelKey))
-                        .addComponent(jLabelUser))
-                    .addComponent(jLabelKey_Reentrada, javax.swing.GroupLayout.Alignment.TRAILING)))
-        );
-        jPanelUsersLayout.setVerticalGroup(
-            jPanelUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelUsersLayout.createSequentialGroup()
-                .addComponent(jLabelUser, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelKey, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelKey_Reentrada)
-                .addGap(4, 4, 4))
-        );
 
         jFormattedTextFieldUser.setDocument( new ControleTamanhoTexto(30) );
         jFormattedTextFieldUser.addActionListener(new java.awt.event.ActionListener() {
@@ -120,27 +112,28 @@ public class Cadastrar_Novo_User extends javax.swing.JDialog {
             }
         });
 
-        javax.swing.GroupLayout jPanelKeyLayout = new javax.swing.GroupLayout(jPanelKey);
-        jPanelKey.setLayout(jPanelKeyLayout);
-        jPanelKeyLayout.setHorizontalGroup(
-            jPanelKeyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPasswordFieldKey_Reentrada)
-            .addGroup(jPanelKeyLayout.createSequentialGroup()
-                .addGroup(jPanelKeyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jFormattedTextFieldUser, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordFieldKey, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+        javax.swing.GroupLayout gl_panel_Entrada_Valores = new javax.swing.GroupLayout(panel_Entrada_Valores);
+        gl_panel_Entrada_Valores.setHorizontalGroup(
+        	gl_panel_Entrada_Valores.createParallelGroup(Alignment.LEADING)
+        		.addGroup(gl_panel_Entrada_Valores.createSequentialGroup()
+        			.addGroup(gl_panel_Entrada_Valores.createParallelGroup(Alignment.LEADING, false)
+        				.addComponent(jFormattedTextFieldUser, GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+        				.addComponent(jPasswordFieldKey, GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+        				.addComponent(jPasswordFieldKey_Reentrada))
+        			.addContainerGap(29, Short.MAX_VALUE))
         );
-        jPanelKeyLayout.setVerticalGroup(
-            jPanelKeyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelKeyLayout.createSequentialGroup()
-                .addComponent(jFormattedTextFieldUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordFieldKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordFieldKey_Reentrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        gl_panel_Entrada_Valores.setVerticalGroup(
+        	gl_panel_Entrada_Valores.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(gl_panel_Entrada_Valores.createSequentialGroup()
+        			.addContainerGap(12, Short.MAX_VALUE)
+        			.addComponent(jFormattedTextFieldUser, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(jPasswordFieldKey, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addGap(11)
+        			.addComponent(jPasswordFieldKey_Reentrada, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addGap(6))
         );
+        panel_Entrada_Valores.setLayout(gl_panel_Entrada_Valores);
 
         jButtonCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonCancelar.setMnemonic('a');
@@ -160,63 +153,41 @@ public class Cadastrar_Novo_User extends javax.swing.JDialog {
             }
         });
 
-        javax.swing.GroupLayout jPanelBotõesLayout = new javax.swing.GroupLayout(jPanelBotões);
-        jPanelBotões.setLayout(jPanelBotõesLayout);
-        jPanelBotõesLayout.setHorizontalGroup(
-            jPanelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBotõesLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jButtonCadastrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonCancelar))
+        javax.swing.GroupLayout gl_panel_Botões = new javax.swing.GroupLayout(panel_Botões);
+        gl_panel_Botões.setHorizontalGroup(
+        	gl_panel_Botões.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(gl_panel_Botões.createSequentialGroup()
+        			.addGap(173)
+        			.addComponent(jButtonCadastrar)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jButtonCancelar)
+        			.addGap(6))
         );
-        jPanelBotõesLayout.setVerticalGroup(
-            jPanelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelBotõesLayout.createSequentialGroup()
-                .addGroup(jPanelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonCancelar)
-                    .addComponent(jButtonCadastrar))
-                .addGap(0, 0, Short.MAX_VALUE))
+        gl_panel_Botões.setVerticalGroup(
+        	gl_panel_Botões.createParallelGroup(Alignment.LEADING)
+        		.addGroup(gl_panel_Botões.createSequentialGroup()
+        			.addGroup(gl_panel_Botões.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jButtonCancelar)
+        				.addComponent(jButtonCadastrar))
+        			.addGap(0, 0, Short.MAX_VALUE))
         );
-
-        javax.swing.GroupLayout jPanelCadastroUserLayout = new javax.swing.GroupLayout(jPanelCadastroUser);
-        jPanelCadastroUser.setLayout(jPanelCadastroUserLayout);
-        jPanelCadastroUserLayout.setHorizontalGroup(
-            jPanelCadastroUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadastroUserLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(jPanelCadastroUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanelBotões, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanelCadastroUserLayout.createSequentialGroup()
-                        .addComponent(jPanelUsers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)
-                        .addComponent(jPanelKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-        );
-        jPanelCadastroUserLayout.setVerticalGroup(
-            jPanelCadastroUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadastroUserLayout.createSequentialGroup()
-                .addGroup(jPanelCadastroUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanelKey, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelUsers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, 0)
-                .addComponent(jPanelBotões, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        panel_Botões.setLayout(gl_panel_Botões);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelCadastroUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addComponent(panel_Cadastro, GroupLayout.PREFERRED_SIZE, 371, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(42, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jPanelCadastroUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(10)
+        			.addComponent(panel_Cadastro, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(22, Short.MAX_VALUE))
         );
+        getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -440,19 +411,19 @@ public class Cadastrar_Novo_User extends javax.swing.JDialog {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Cadastrar_Novo_User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Cadastrar_Novo_User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Cadastrar_Novo_User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Cadastrar_Novo_User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -460,7 +431,7 @@ public class Cadastrar_Novo_User extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Cadastrar_Novo_User dialog = new Cadastrar_Novo_User(new javax.swing.JFrame(), true);
+                Cadastrar dialog = new Cadastrar(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -479,10 +450,10 @@ public class Cadastrar_Novo_User extends javax.swing.JDialog {
     private javax.swing.JLabel jLabelKey;
     private javax.swing.JLabel jLabelKey_Reentrada;
     private javax.swing.JLabel jLabelUser;
-    private javax.swing.JPanel jPanelBotões;
-    private javax.swing.JPanel jPanelCadastroUser;
-    private javax.swing.JPanel jPanelKey;
-    private javax.swing.JPanel jPanelUsers;
+    private javax.swing.JPanel panel_Botões;
+    private javax.swing.JPanel panel_Cadastro;
+    private javax.swing.JPanel panel_Entrada_Valores;
+    private javax.swing.JPanel panel_Rótulos;
     private javax.swing.JPasswordField jPasswordFieldKey;
     private javax.swing.JPasswordField jPasswordFieldKey_Reentrada;
     // End of variables declaration//GEN-END:variables

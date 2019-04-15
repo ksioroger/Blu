@@ -17,7 +17,7 @@ public class BD {
     static final String USUÁRIO = "note";
     static final String SENHA = "note";
     */
-    static final String URL_BD = "jdbc:mysql://mysql.myddns.me:3306/note?autoReconnect=true&useSSL=false";
+    static final String URL_BD = "jdbc:mysql://192.168.56.102:3306/note?autoReconnect=true&useSSL=false";
     //static final String URL_BD = "jdbc:mysql://sql10.freemysqlhosting.net:3306/sql10231939?autoReconnect=true&useSSL=false";
     static final String USUÁRIO = "note";
     static final String SENHA = "note";

@@ -279,7 +279,7 @@ public class Gerenciar_User extends javax.swing.JFrame {
     //Cria a janela de novo cadastro de senha
     private void Cadastrar(){
         //Criar uma nova janela, para adicionar dados
-        Cadastrar_Novo_User cadastrardialogo = new Cadastrar_Novo_User(this,true);
+        Cadastrar cadastrardialogo = new Cadastrar(this,true);
         cadastrardialogo.setLocationRelativeTo(null);
         cadastrardialogo.setResizable(false);
         cadastrardialogo.setVisible(true);

@@ -1,0 +1,34 @@
+Configuração de acesso remoto ao Banco de dados 
+https://receitasdecodigo.com.br/banco-de-dados/liberar-acesso-remoto-para-servidores-mysql
+
+Passo 01
+Crie o banco e após realizar as seguintes configurações
+Liberar o acesso remoto ao bancco de dados maria 
+O primeiro passo é liberar o serviço do MySQL para ser acessado através da rede, para isso precisamos alterar 
+o endereço ip que o MySQL fica originalmente ouvindo, que é o 127.0.0.1.
+Para fazer isso, primeiro abra o terminal, logo após digite o comando:
+nano /etc/mysql/my.cnf
+Dentro deste arquivo, localize a linha que contém bind-address = 127.0.0.1
+e adicione um caracter # no inicio da linha para comentar, ou se preferir apague a linha.
+Deve ficar assim:
+#bind-address = 127.0.0.1
+Para finalizar, reinicie o mysql:
+service mysqld restart
+
+Passo 02 - Permissão do usuário para acesso remoto
+mysql -u root -p
+Após acessar digite o comando para criar o nome trocando os parametros que estão entre <>.
+GRANT ALL ON <NomeDoBancoDeDados>.* TO '<NomeDoUsuario>'@'%' IDENTIFIED BY '<SenhaDoUsuario>' WITH GRANT OPTION;
+Se quiser liberar o próprio usuário root para todos os bancos de dados, digite:
+GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY '<SenhaDoUsuario>' WITH GRANT OPTION;
+Em seguida, para finalizar execute o comando para atribuir os privilégios criados:
+FLUSH PRIVILEGES;
+
+
+Extras
+Mostra os usuarios:
+SELECT User, Host FROM mysql.user;
+Mostra os privilégios de determinado usuário:
+SHOW GRANTS FOR usuario;
+Mas logado como usuario root:
+mysql -u root -p

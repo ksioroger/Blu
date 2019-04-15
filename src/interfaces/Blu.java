@@ -23,6 +23,8 @@ import javax.swing.JOptionPane;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Dimension;
+import javax.swing.JProgressBar;
 
  /*
  * @author Cassiano Rogério
@@ -80,7 +82,7 @@ public class Blu extends javax.swing.JFrame {
         setMinimumSize(getMinimumSize());
         setName("Blu"); // NOI18N
         setShape(getShape());
-        setSize(getMaximumSize());
+        setSize(new Dimension(837, 134));
 
         jPanelListagem.setBackground(new java.awt.Color(204, 204, 204));
         jPanelListagem.setMaximumSize(getMaximumSize());
@@ -118,28 +120,33 @@ public class Blu extends javax.swing.JFrame {
         });
 
         jLabel1.setText("Blu - Sistema de gerenciamento de estoque e vendas");
+        
+        JProgressBar progressBar = new JProgressBar();
+        progressBar.setIndeterminate(true);
 
         javax.swing.GroupLayout jPanelBotõesLayout = new javax.swing.GroupLayout(jPanelBotões);
         jPanelBotõesLayout.setHorizontalGroup(
-        	jPanelBotõesLayout.createParallelGroup(Alignment.LEADING)
+        	jPanelBotõesLayout.createParallelGroup(Alignment.TRAILING)
         		.addGroup(jPanelBotõesLayout.createSequentialGroup()
         			.addContainerGap()
+        			.addComponent(progressBar, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
         			.addComponent(jLabel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        			.addGap(637)
+        			.addPreferredGap(ComponentPlacement.RELATED)
         			.addComponent(jButtonSair)
         			.addContainerGap())
         );
         jPanelBotõesLayout.setVerticalGroup(
         	jPanelBotõesLayout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(jPanelBotõesLayout.createSequentialGroup()
+        		.addGroup(Alignment.TRAILING, jPanelBotõesLayout.createSequentialGroup()
         			.addContainerGap()
-        			.addGroup(jPanelBotõesLayout.createParallelGroup(Alignment.LEADING)
-        				.addGroup(jPanelBotõesLayout.createSequentialGroup()
-        					.addGap(18)
-        					.addComponent(jLabel1, GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
-        				.addGroup(jPanelBotõesLayout.createSequentialGroup()
-        					.addComponent(jButtonSair)
-        					.addGap(0, 0, Short.MAX_VALUE)))
+        			.addGroup(jPanelBotõesLayout.createParallelGroup(Alignment.TRAILING)
+        				.addComponent(jButtonSair, Alignment.LEADING)
+        				.addGroup(Alignment.LEADING, jPanelBotõesLayout.createSequentialGroup()
+        					.addGap(30)
+        					.addGroup(jPanelBotõesLayout.createParallelGroup(Alignment.LEADING)
+        						.addComponent(jLabel1, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
+        						.addComponent(progressBar, GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE))))
         			.addContainerGap())
         );
         jPanelBotões.setLayout(jPanelBotõesLayout);
@@ -304,7 +311,7 @@ public class Blu extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -347,5 +354,4 @@ public class Blu extends javax.swing.JFrame {
     javax.swing.JPanel jPanelBotões;
     javax.swing.JPanel jPanelListagem;
     javax.swing.JScrollPane jScrollPaneListadeSenhas;
-    // End of variables declaration//GEN-END:variables
 }

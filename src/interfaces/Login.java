@@ -18,6 +18,9 @@ import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 import javax.swing.KeyStroke;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 /**
  *
@@ -70,24 +73,23 @@ public class Login extends javax.swing.JFrame {
         jLabelUser.setText("Usuário");
 
         javax.swing.GroupLayout jPanelLabelsLayout = new javax.swing.GroupLayout(jPanelLabels);
-        jPanelLabels.setLayout(jPanelLabelsLayout);
         jPanelLabelsLayout.setHorizontalGroup(
-            jPanelLabelsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(jPanelLabelsLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(jPanelLabelsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelUser)
-                    .addComponent(jLabelKey)))
+        	jPanelLabelsLayout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(jPanelLabelsLayout.createSequentialGroup()
+        			.addGap(11)
+        			.addGroup(jPanelLabelsLayout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(jLabelUser)
+        				.addComponent(jLabelKey, Alignment.TRAILING)))
         );
         jPanelLabelsLayout.setVerticalGroup(
-            jPanelLabelsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelLabelsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelUser, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabelKey)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	jPanelLabelsLayout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanelLabelsLayout.createSequentialGroup()
+        			.addComponent(jLabelUser, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jLabelKey)
+        			.addContainerGap(23, Short.MAX_VALUE))
         );
+        jPanelLabels.setLayout(jPanelLabelsLayout);
 
         jPasswordFieldKey.setDocument( new ControleTamanhoTexto(30) );
         jPasswordFieldKey.addActionListener(new java.awt.event.ActionListener() {
@@ -102,26 +104,6 @@ public class Login extends javax.swing.JFrame {
                 jFormattedTextFieldUserActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanelCamposdeDadosLayout = new javax.swing.GroupLayout(jPanelCamposdeDados);
-        jPanelCamposdeDados.setLayout(jPanelCamposdeDadosLayout);
-        jPanelCamposdeDadosLayout.setHorizontalGroup(
-            jPanelCamposdeDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCamposdeDadosLayout.createSequentialGroup()
-                .addGroup(jPanelCamposdeDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPasswordFieldKey, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextFieldUser, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanelCamposdeDadosLayout.setVerticalGroup(
-            jPanelCamposdeDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCamposdeDadosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jFormattedTextFieldUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordFieldKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         jButtonNovoUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButtonNovoUser.setMnemonic('N');
@@ -150,56 +132,65 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanelBotõesLayout = new javax.swing.GroupLayout(jPanelBotões);
-        jPanelBotões.setLayout(jPanelBotõesLayout);
-        jPanelBotõesLayout.setHorizontalGroup(
-            jPanelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelBotõesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonNovoUser)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonEntrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12))
-        );
-        jPanelBotõesLayout.setVerticalGroup(
-            jPanelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelBotõesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonNovoUser)
-                    .addComponent(jButtonEntrar)
-                    .addComponent(jButtonCancelar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanelEtiquetaseCamposLayout = new javax.swing.GroupLayout(jPanelEtiquetaseCampos);
-        jPanelEtiquetaseCampos.setLayout(jPanelEtiquetaseCamposLayout);
-        jPanelEtiquetaseCamposLayout.setHorizontalGroup(
-            jPanelEtiquetaseCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEtiquetaseCamposLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanelLabels, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelCamposdeDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanelEtiquetaseCamposLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanelBotões, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanelEtiquetaseCamposLayout.setVerticalGroup(
-            jPanelEtiquetaseCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelEtiquetaseCamposLayout.createSequentialGroup()
-                .addGroup(jPanelEtiquetaseCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelCamposdeDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanelLabels, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanelBotões, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         getContentPane().add(jPanelEtiquetaseCampos);
+        GroupLayout gl_jPanelBotões = new GroupLayout(jPanelBotões);
+        gl_jPanelBotões.setHorizontalGroup(
+        	gl_jPanelBotões.createParallelGroup(Alignment.LEADING)
+        		.addGroup(gl_jPanelBotões.createSequentialGroup()
+        			.addGap(20)
+        			.addComponent(jButtonNovoUser)
+        			.addGap(6)
+        			.addComponent(jButtonEntrar)
+        			.addGap(6)
+        			.addComponent(jButtonCancelar))
+        );
+        gl_jPanelBotões.setVerticalGroup(
+        	gl_jPanelBotões.createParallelGroup(Alignment.LEADING)
+        		.addGroup(gl_jPanelBotões.createSequentialGroup()
+        			.addGap(11)
+        			.addGroup(gl_jPanelBotões.createParallelGroup(Alignment.LEADING)
+        				.addComponent(jButtonNovoUser)
+        				.addComponent(jButtonEntrar)
+        				.addComponent(jButtonCancelar)))
+        );
+        jPanelBotões.setLayout(gl_jPanelBotões);
+        GroupLayout gl_jPanelCamposdeDados = new GroupLayout(jPanelCamposdeDados);
+        gl_jPanelCamposdeDados.setHorizontalGroup(
+        	gl_jPanelCamposdeDados.createParallelGroup(Alignment.LEADING)
+        		.addComponent(jFormattedTextFieldUser, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE)
+        		.addComponent(jPasswordFieldKey, GroupLayout.PREFERRED_SIZE, 242, GroupLayout.PREFERRED_SIZE)
+        );
+        gl_jPanelCamposdeDados.setVerticalGroup(
+        	gl_jPanelCamposdeDados.createParallelGroup(Alignment.LEADING)
+        		.addGroup(gl_jPanelCamposdeDados.createSequentialGroup()
+        			.addGap(11)
+        			.addComponent(jFormattedTextFieldUser, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addGap(11)
+        			.addComponent(jPasswordFieldKey, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        );
+        jPanelCamposdeDados.setLayout(gl_jPanelCamposdeDados);
+        GroupLayout gl_jPanelEtiquetaseCampos = new GroupLayout(jPanelEtiquetaseCampos);
+        gl_jPanelEtiquetaseCampos.setHorizontalGroup(
+        	gl_jPanelEtiquetaseCampos.createParallelGroup(Alignment.LEADING)
+        		.addGroup(gl_jPanelEtiquetaseCampos.createSequentialGroup()
+        			.addGap(10)
+        			.addComponent(jPanelLabels, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addGap(6)
+        			.addComponent(jPanelCamposdeDados, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        		.addGroup(gl_jPanelEtiquetaseCampos.createSequentialGroup()
+        			.addGap(22)
+        			.addComponent(jPanelBotões, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        );
+        gl_jPanelEtiquetaseCampos.setVerticalGroup(
+        	gl_jPanelEtiquetaseCampos.createParallelGroup(Alignment.LEADING)
+        		.addGroup(gl_jPanelEtiquetaseCampos.createSequentialGroup()
+        			.addGroup(gl_jPanelEtiquetaseCampos.createParallelGroup(Alignment.LEADING)
+        				.addComponent(jPanelLabels, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jPanelCamposdeDados, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addGap(6)
+        			.addComponent(jPanelBotões, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        );
+        jPanelEtiquetaseCampos.setLayout(gl_jPanelEtiquetaseCampos);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -209,10 +200,10 @@ public class Login extends javax.swing.JFrame {
         System.exit(0);  
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
-    //Cria a janela de novo cadastro de senha
+  //Cria a janela de novo cadastro de senha
     private void Cadastrar(){
         //Criar uma nova janela, para adicionar dados
-        Cadastrar_Novo_User cadastrardialogo = new Cadastrar_Novo_User(this,true);
+        Cadastrar cadastrardialogo = new Cadastrar(this,true);
         cadastrardialogo.setLocationRelativeTo(null);
         cadastrardialogo.setResizable(false);
         cadastrardialogo.setVisible(true);
@@ -342,7 +333,7 @@ public class Login extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -365,7 +356,7 @@ public class Login extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 Login TelaLogin = new Login();
-                TelaLogin.setLayout(new BorderLayout());
+                TelaLogin.getContentPane().setLayout(new BorderLayout());
                 TelaLogin.setLocationRelativeTo(null);
                 TelaLogin.setResizable(false);
                 TelaLogin.setVisible(true);
